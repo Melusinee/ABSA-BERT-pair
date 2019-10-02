@@ -87,7 +87,8 @@ class BertConfig(object):
     def from_json_file(cls, json_file):
         """Constructs a `BertConfig` from a json file of parameters."""
         with open(json_file, "r",encoding="utf8") as reader:
-            text = reader.read()
+            text = reader.readlines()
+            print(text)
         return cls.from_dict(json.loads(text))
 
     def to_dict(self):
